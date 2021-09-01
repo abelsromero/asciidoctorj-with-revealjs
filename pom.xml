@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.asciidoctor.maven</groupId>
-    <artifactId>asciidoc-to-revealjs-example</artifactId>
+    <artifactId>asciidoctorj-with-revealjs</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Asciidoc to reveal.js Maven example</name>
 
@@ -76,6 +76,9 @@
                             <resources>
                                 <resource>
                                     <directory>${project.basedir}/src/docs/</directory>
+                                    <excludes>
+                                        <exclude>**/.css</exclude>
+                                    </excludes>
                                 </resource>
                             </resources>
                         </configuration>
@@ -99,6 +102,9 @@
                             <resources>
                                 <resource>
                                     <directory>${project.basedir}/src/docs/</directory>
+                                    <excludes>
+                                        <exclude>**/.css</exclude>
+                                    </excludes>
                                 </resource>
                             </resources>
                             <attributes>
