@@ -1,0 +1,33 @@
+= Asciidoctor Maven Plugin: Asciidoc to reveal.js Example
+:imagesdir: docs/images
+
+NOTE: Derived from https://github.com/asciidoctor/asciidoctor-maven-examples/tree/main/asciidoc-to-revealjs-example.
+
+An example that demonstrates how to convert AsciiDoc to reveal.js slides with different versions of asciidoctor-reveal.js the Asciidoctor Maven plugin.
+
+In particular, shows different methods to display code blocs.
+
+== Usage
+
+Project has 4 profiles, each one supporting:
+
+* v4 (default): `asciidoctor-reveal.js` v4.0.1 + `reveal.js` v3.9.2
+* v4-monokai:   `asciidoctor-reveal.js` v4.0.1 + `reveal.js` v3.9.2 + custom Monokai code style
+* v5rc:         `asciidoctor-reveal.js` v5.0.0.rc1 + `reveal.js` v4.1.2
+* v5rc-monokai: `asciidoctor-reveal.js` v5.0.0.rc1 + `reveal.js` v4.1.2 + provided reveal.js Monokai style
+
+Each profile will generate the slides in a likewise named folder.
+
+To build all run:
+
+ $ mvn clean && mvn && mvn -Pv4-monokai && mvn -Pv5rc && mvn -Pv5rc-monokai
+
+== Known issues
+
+Default reveal.js styles for v5rc profile don't align well with code sections make it unusable, which is why we need to customize it.
+
+.v5rc profile default code style
+image::v5rc.png[]
+
+.v5rc-monokai profile 
+image::v5rc-monokai.png[]
